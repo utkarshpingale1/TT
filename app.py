@@ -834,10 +834,13 @@ buildCompare();
 
 app = Flask(__name__)
 
+DATA = load_data()
+
 @app.route("/")
 def dashboard():
-    data = load_data()
-    return build_html(data)
+    return build_html(DATA)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
