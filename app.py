@@ -31,7 +31,7 @@ from pathlib import Path
 # 1. DATA LOADING & PROCESSING
 # ─────────────────────────────────────────────
 
-BASE = Path(__file__).parent / "data"
+BASE = Path(__file__).parent
 
 def load_data():
     ghr = pd.read_excel(BASE / "GHR.xlsx")
